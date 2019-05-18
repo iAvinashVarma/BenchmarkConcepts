@@ -1,0 +1,19 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: DotNetCoreInstaller@0
+  inputs:
+    version: '2.1.600'
+  displayName: 'Install DotNetCore'
+  
+- script:
+   dotnet build
+  displayName: 'dotnet build'
+
+- script:
+   dotnet test
+  displayName: 'dotnet test'
