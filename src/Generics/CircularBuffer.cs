@@ -1,6 +1,8 @@
-﻿namespace Generics
+﻿using Generics.Interface;
+
+namespace Generics
 {
-	public class CircularBuffer<T>
+	public class CircularBuffer<T> : IBuffer<T>
 	{
 		private T[] _buffer;
 

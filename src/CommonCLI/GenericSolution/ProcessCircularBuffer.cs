@@ -1,5 +1,6 @@
 ﻿using CommonCLI.Interface;
 using Generics;
+using Generics.Interface;
 using System;
 
 namespace CommonCLI.GenericSolution
@@ -13,7 +14,7 @@ namespace CommonCLI.GenericSolution
 			ProcessBuffer(buffer);
 		}
 
-		private void ProcessBuffer(CircularBuffer<double> buffer)
+		private void ProcessBuffer(IBuffer<double> buffer)
 		{
 			double sum = 0.0d;
 			Console.WriteLine("Buffer: ");
@@ -24,7 +25,7 @@ namespace CommonCLI.GenericSolution
 			Console.WriteLine(sum);
 		}
 
-		private void ProcessInput(CircularBuffer<double> buffer)
+		private void ProcessInput(IBuffer<double> buffer)
 		{
 			while (true)
 			{
