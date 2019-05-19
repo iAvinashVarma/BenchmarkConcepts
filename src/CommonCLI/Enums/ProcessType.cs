@@ -5,6 +5,7 @@
 		CircularBuffer = 1,
 		Array = 2,
 		List = 3,
-		Queue = 4	// FIFO
+		Queue = 4,	// FIFO
+		Stack = 5	// LIFO
 	}
 }
