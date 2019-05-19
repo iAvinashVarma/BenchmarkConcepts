@@ -28,6 +28,9 @@ namespace CommonCLI
 				case ProcessType.Stack:
 					genericProcess = new ProcessStack();
 					break;
+				case ProcessType.HashSet:
+					genericProcess = new ProcessHashSet();
+					break;
 				default:
 					break;
 			}

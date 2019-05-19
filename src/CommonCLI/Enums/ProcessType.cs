@@ -6,6 +6,7 @@
 		Array = 2,
 		List = 3,
 		Queue = 4,	// FIFO
-		Stack = 5	// LIFO
+		Stack = 5,	// LIFO
+		HashSet = 6
 	}
 }
