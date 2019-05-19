@@ -4,4 +4,5 @@ dotnet: 2.1.502
 solution: BenchmarkConcepts.sln
 script:
   - dotnet restore
+  - dotnet build
   - dotnet test

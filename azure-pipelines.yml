@@ -9,7 +9,11 @@ steps:
   inputs:
     version: '2.1.600'
   displayName: 'Install DotNetCore'
-  
+
+- script:
+   dotnet restore
+  displayName: 'dotnet restore'
+
 - script:
    dotnet build
   displayName: 'dotnet build'
