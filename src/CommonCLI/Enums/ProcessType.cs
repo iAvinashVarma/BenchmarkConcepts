@@ -8,6 +8,7 @@
 		Queue = 4,	// FIFO
 		Stack = 5,	// LIFO
 		HashSet = 6,
-		LinkedList = 7
+		LinkedList = 7,
+		Dictionary = 8
 	}
 }

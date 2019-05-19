@@ -33,6 +33,9 @@ namespace CommonCLI
 				case ProcessType.LinkedList:
 					genericProcess = new ProcessLinkedList();
 					break;
+				case ProcessType.Dictionary:
+					genericProcess = new ProcessDictionary();
+					break;
 				default:
 					break;
 			}
