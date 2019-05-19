@@ -3,7 +3,7 @@ using Generics.Model;
 using System;
 using System.Collections.Generic;
 
-namespace CommonCLI.Collections
+namespace CommonCLI.DataStructure
 {
 	public class ProcessList : IGenericProcess
 	{

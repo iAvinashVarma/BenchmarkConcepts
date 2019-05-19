@@ -2,7 +2,7 @@
 using Generics;
 using System;
 
-namespace CommonCLI.GenericProblem
+namespace CommonCLI.GenericSolution
 {
 	public class ProcessCircularBuffer : IGenericProcess
 	{

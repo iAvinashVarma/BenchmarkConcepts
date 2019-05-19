@@ -1,7 +1,6 @@
-﻿using System;
-using CommonCLI.Collections;
+﻿using CommonCLI.DataStructure;
 using CommonCLI.Enums;
-using CommonCLI.GenericProblem;
+using CommonCLI.GenericSolution;
 using CommonCLI.Interface;
 
 namespace CommonCLI
@@ -30,6 +29,9 @@ namespace CommonCLI
 					break;
 				case ProcessType.HashSet:
 					genericProcess = new ProcessHashSet();
+					break;
+				case ProcessType.LinkedList:
+					genericProcess = new ProcessLinkedList();
 					break;
 				default:
 					break;

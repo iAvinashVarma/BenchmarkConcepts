@@ -2,7 +2,7 @@
 using Generics.Model;
 using System;
 
-namespace CommonCLI.Collections
+namespace CommonCLI.DataStructure
 {
 	public class ProcessArray : IGenericProcess
 	{

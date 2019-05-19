@@ -7,6 +7,7 @@
 		List = 3,
 		Queue = 4,	// FIFO
 		Stack = 5,	// LIFO
-		HashSet = 6
+		HashSet = 6,
+		LinkedList = 7
 	}
 }
