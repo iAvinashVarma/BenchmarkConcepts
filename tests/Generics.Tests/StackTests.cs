@@ -41,7 +41,7 @@ namespace Generics.Tests
 			var asArray = stack.ToArray();
 			stack.Pop();
 
-			Assert.AreEqual(1, asArray[0]);
+			Assert.AreEqual(3, asArray[0]);
 			Assert.AreEqual(2, stack.Count);
 		}
 	}
