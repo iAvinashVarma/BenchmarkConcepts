@@ -1,0 +1,7 @@
+language: csharp
+mono: none
+dotnet: 2.1.600
+solution: BenchmarkConcepts.sln
+script:
+  - dotnet restore
+  - dotnet test
