@@ -36,6 +36,9 @@ namespace CommonCLI
 				case ProcessType.Dictionary:
 					genericProcess = new ProcessDictionary();
 					break;
+				case ProcessType.Sort:
+					genericProcess = new ProcessSort();
+					break;
 				default:
 					break;
 			}

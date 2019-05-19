@@ -9,6 +9,7 @@
 		Stack = 5,	// LIFO
 		HashSet = 6,
 		LinkedList = 7,
-		Dictionary = 8
+		Dictionary = 8,
+		Sort = 9
 	}
 }
