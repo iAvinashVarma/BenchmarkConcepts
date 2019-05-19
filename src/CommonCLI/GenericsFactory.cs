@@ -12,6 +12,9 @@ namespace CommonCLI
 			IGenericProcess genericProcess = null;
 			switch (processType)
 			{
+				case ProcessType.Buffer:
+					genericProcess = new ProcessBuffer();
+					break;
 				case ProcessType.CircularBuffer:
 					genericProcess = new ProcessCircularBuffer();
 					break;

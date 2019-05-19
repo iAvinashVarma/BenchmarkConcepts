@@ -10,6 +10,7 @@
 		HashSet = 6,
 		LinkedList = 7,
 		Dictionary = 8,
-		Sort = 9
+		Sort = 9,
+		Buffer = 10
 	}
 }
