@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Generics.Interface
 {
-	public interface IBuffer<T>
+	public interface IBuffer<T> : IEnumerable<T>
 	{
 		bool IsEmpty { get; }
 

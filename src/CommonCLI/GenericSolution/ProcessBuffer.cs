@@ -1,5 +1,6 @@
 ﻿using CommonCLI.Interface;
 using Generics;
+using Generics.Concrete;
 using Generics.Interface;
 using System;
 
@@ -11,7 +12,16 @@ namespace CommonCLI.GenericSolution
 		{
 			var buffer = new Buffer<double>();
 			DoInput(buffer);
+			OutputBuffer(buffer);
 			DoBuffer(buffer);
+		}
+
+		public virtual void OutputBuffer(IBuffer<double> buffer)
+		{
+			foreach (var item in buffer)
+			{
+				Console.WriteLine(item);
+			}
 		}
 
 		public virtual void DoBuffer(IBuffer<double> buffer)
