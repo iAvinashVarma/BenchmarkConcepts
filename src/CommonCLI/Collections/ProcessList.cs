@@ -1,10 +1,11 @@
-﻿using Generics.Model;
+﻿using CommonCLI.Interface;
+using Generics.Model;
 using System;
 using System.Collections.Generic;
 
-namespace CommonCLI
+namespace CommonCLI.Collections
 {
-	public class ProcessList : SingletonBase<ProcessList>
+	public class ProcessList : IGenericProcess
 	{
 		public void Run()
 		{
@@ -12,6 +13,22 @@ namespace CommonCLI
 			AddEmployees(employees);
 			ProcessForEach(employees);
 			ProcessFor(employees);
+			// ProcessCapacity();
+		}
+
+		private void ProcessCapacity()
+		{
+			var numbers = new List<int>(capacity: 10);
+			var capacity = -1;
+			while (true)
+			{
+				if (numbers.Capacity != capacity)
+				{
+					capacity = numbers.Capacity;
+					Console.WriteLine(capacity);
+				}
+				numbers.Add(1);
+			}
 		}
 
 		private void AddEmployees(List<Employee> employees)

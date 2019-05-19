@@ -1,9 +1,10 @@
-﻿using Generics;
+﻿using CommonCLI.Interface;
+using Generics;
 using System;
 
-namespace CommonCLI
+namespace CommonCLI.GenericProblem
 {
-	public class ProcessCircularBuffer : SingletonBase<ProcessCircularBuffer>
+	public class ProcessCircularBuffer : IGenericProcess
 	{
 		public void Run()
 		{

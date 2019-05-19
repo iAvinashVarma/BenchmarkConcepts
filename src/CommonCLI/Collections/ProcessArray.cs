@@ -1,9 +1,10 @@
-﻿using Generics.Model;
+﻿using CommonCLI.Interface;
+using Generics.Model;
 using System;
 
-namespace CommonCLI
+namespace CommonCLI.Collections
 {
-	public class ProcessArray : SingletonBase<ProcessList>
+	public class ProcessArray : IGenericProcess
 	{
 		public void Run()
 		{
