@@ -6,7 +6,7 @@ namespace CommonCLI
 	{
 		static void Main(string[] args)
 		{
-			GenericsFactory.Instance.Run(ProcessType.Delegates);
+			GenericsFactory.Instance.Run(ProcessType.Buffer);
 		}
 	}
 }
