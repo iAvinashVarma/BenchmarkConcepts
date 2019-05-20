@@ -18,7 +18,7 @@ namespace CommonCLI.GenericSolution
 
 		public virtual void OutputBuffer(IBuffer<double> buffer)
 		{
-			Converter<double, DateTime> converter = d => DateTime.Now.AddDays(d);
+			DateTime converter(double d) => DateTime.Now.AddDays(d);
 			buffer.Map(converter).ForEach(x => Console.WriteLine(x));
 		}
 
