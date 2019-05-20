@@ -20,10 +20,7 @@ namespace CommonCLI.GenericSolution
 
 		public virtual void OutputBuffer(IBuffer<double> buffer)
 		{
-			buffer.Dump(delegate (double data)
-			{
-				Console.WriteLine(data);
-			});
+			buffer.Dump(d => Console.WriteLine(d));
 		}
 
 		public virtual void DoBuffer(IBuffer<double> buffer)
