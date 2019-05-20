@@ -1,6 +1,7 @@
 ﻿using CommonCLI.Interface;
 using Generics;
 using Generics.Concrete;
+using Generics.Extensions;
 using Generics.Interface;
 using System;
 
@@ -18,7 +19,7 @@ namespace CommonCLI.GenericSolution
 
 		public virtual void OutputBuffer(IBuffer<double> buffer)
 		{
-			foreach (var item in buffer.AsEnumerableOf<int>())
+			foreach (var item in buffer.AsEnumerableOf<double, int>())
 			{
 				Console.WriteLine(item);
 			}
