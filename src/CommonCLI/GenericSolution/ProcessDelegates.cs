@@ -7,10 +7,10 @@ namespace CommonCLI.GenericSolution
 	{
 		public void Run()
 		{
-			Action<bool> print = p => Console.WriteLine(p);
-			Func<double, double> square = d => d * d;
-			Func<double, double, double> add = (x, y) => x + y;
-			Predicate<double> isOdd = n => n % 2 != 0;
+			void print(bool p) => Console.WriteLine(p);
+			double square(double d) => d * d;
+			double add(double x, double y) => x + y;
+			bool isOdd(double n) => n % 2 != 0;
 			print(isOdd(square(add(3, 6))));
 		}
 	}
