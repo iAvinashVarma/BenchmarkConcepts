@@ -1,4 +1,5 @@
-﻿using CommonCLI.DataStructure;
+﻿using CommonCLI.Compare;
+using CommonCLI.DataStructure;
 using CommonCLI.Enums;
 using CommonCLI.GenericSolution;
 using CommonCLI.Interface;
@@ -41,6 +42,9 @@ namespace CommonCLI
 					break;
 				case ProcessType.Sort:
 					genericProcess = new ProcessSort();
+					break;
+				case ProcessType.ComparingEmployees:
+					genericProcess = new ProcessComparingEmployees();
 					break;
 				default:
 					break;

@@ -11,6 +11,7 @@
 		LinkedList = 7,
 		Dictionary = 8,
 		Sort = 9,
-		Buffer = 10
+		Buffer = 10,
+		ComparingEmployees = 11
 	}
 }
