@@ -12,6 +12,7 @@
 		Dictionary = 8,
 		Sort = 9,
 		Buffer = 10,
-		ComparingEmployees = 11
+		ComparingEmployees = 11,
+		Delegates = 12
 	}
 }

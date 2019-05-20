@@ -1,7 +1,5 @@
 ﻿using CommonCLI.Interface;
-using Generics;
 using Generics.Concrete;
-using Generics.Delegates;
 using Generics.Extensions;
 using Generics.Interface;
 using System;
@@ -12,7 +10,7 @@ namespace CommonCLI.GenericSolution
 	{
 		public virtual void Run()
 		{
-			var buffer = new Buffer<double>();
+			Buffer<double> buffer = new Buffer<double>();
 			DoInput(buffer);
 			OutputBuffer(buffer);
 			DoBuffer(buffer);
@@ -38,7 +36,7 @@ namespace CommonCLI.GenericSolution
 		{
 			while (true)
 			{
-				var input = Console.ReadLine();
+				string input = Console.ReadLine();
 				if (double.TryParse(input, out double value))
 				{
 					buffer.Write(value);

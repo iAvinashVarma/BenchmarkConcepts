@@ -46,6 +46,9 @@ namespace CommonCLI
 				case ProcessType.ComparingEmployees:
 					genericProcess = new ProcessComparingEmployees();
 					break;
+				case ProcessType.Delegates:
+					genericProcess = new ProcessDelegates();
+					break;
 				default:
 					break;
 			}

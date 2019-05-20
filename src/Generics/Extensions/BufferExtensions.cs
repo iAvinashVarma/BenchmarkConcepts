@@ -1,5 +1,4 @@
-﻿using Generics.Delegates;
-using Generics.Interface;
+﻿using Generics.Interface;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +9,7 @@ namespace Generics.Extensions
 	{
 		public static void Dump<T>(this IBuffer<T> buffer, Action<T> print)
 		{
-			foreach (var item in buffer)
+			foreach (T item in buffer)
 			{
 				print(item);
 			}
