@@ -20,8 +20,7 @@ namespace CommonCLI.GenericSolution
 
 		public virtual void OutputBuffer(IBuffer<double> buffer)
 		{
-			var consoleOut = new Printer<double>(ConsoleWrite); 
-			buffer.Dump(consoleOut);
+			buffer.Dump(ConsoleWrite);
 		}
 
 		private void ConsoleWrite(double data)
