@@ -18,7 +18,7 @@ namespace CommonCLI.GenericSolution
 
 		public virtual void OutputBuffer(IBuffer<double> buffer)
 		{
-			foreach (var item in buffer)
+			foreach (var item in buffer.AsEnumerableOf<int>())
 			{
 				Console.WriteLine(item);
 			}

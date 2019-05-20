@@ -10,6 +10,8 @@ namespace Generics.Interface
 
 		void Write(T value);
 
+		IEnumerable<TOut> AsEnumerableOf<TOut>();
+
 		T Read();
 	}
 }

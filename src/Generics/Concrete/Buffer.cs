@@ -1,6 +1,7 @@
 ﻿using Generics.Interface;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace Generics.Concrete
 {
@@ -9,6 +10,16 @@ namespace Generics.Concrete
 		protected Queue<T> _queue = new Queue<T>();
 
 		public virtual bool IsEmpty => _queue.Count == 0;
+
+		public IEnumerable<TOut> AsEnumerableOf<TOut>()
+		{
+			var converter = TypeDescriptor.GetConverter(typeof(T));
+			foreach (var item in _queue)
+			{
+				var result = converter.ConvertTo(item, typeof(TOut));
+				yield return (TOut)result;
+			}
+		}
 
 		public IEnumerator<T> GetEnumerator()
 		{
