@@ -5,14 +5,14 @@ using System.Linq;
 
 namespace CommonCLI.Compare
 {
-	public class DepartmentHashSet : SortedDictionary<string, HashSet<Employee>>, IDepartmentCollection<DepartmentHashSet, Employee>, IDepartmentEnumerable<string, Employee>
+	public class DepartmentHashSet : SortedDictionary<string, HashSet<Employee>>, IDepartmentCollection<Employee>, IDepartmentEnumerable<string, Employee>
 	{
 		public SortedDictionary<string, HashSet<Employee>> Departments
 		{
 			get { return this; }
 		}
 
-		public DepartmentHashSet Add(string departmentName, Employee entity)
+		public IDepartmentCollection<Employee> Add(string departmentName, Employee entity)
 		{
 			if (!ContainsKey(departmentName))
 			{

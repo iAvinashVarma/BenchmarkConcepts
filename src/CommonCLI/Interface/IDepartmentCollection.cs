@@ -1,7 +1,7 @@
 ﻿namespace CommonCLI.Interface
 {
-	public interface IDepartmentCollection<TCol, TEnt>
+	public interface IDepartmentCollection<TEntity>
 	{
-		TCol Add(string departmentName, TEnt entity);
+		IDepartmentCollection<TEntity> Add(string departmentName, TEntity entity);
 	}
 }

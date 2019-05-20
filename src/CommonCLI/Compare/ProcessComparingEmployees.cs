@@ -40,7 +40,7 @@ namespace CommonCLI.Compare
 			IterateDictionary(departments);
 		}
 
-		private void AddEmployeeData<TCol>(IDepartmentCollection<TCol, Employee> departments)
+		private void AddEmployeeData(IDepartmentCollection<Employee> departments)
 		{
 			string engineering = "Engineering";
 			string sales = "Sales";

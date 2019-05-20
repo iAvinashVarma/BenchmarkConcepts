@@ -5,14 +5,14 @@ using System.Linq;
 
 namespace CommonCLI.Compare
 {
-	public class DepartmentList : Dictionary<string, List<Employee>>, IDepartmentCollection<DepartmentList, Employee>, IDepartmentEnumerable<string, Employee>
+	public class DepartmentList : Dictionary<string, List<Employee>>, IDepartmentCollection<Employee>, IDepartmentEnumerable<string, Employee>
 	{
 		public Dictionary<string, List<Employee>> Departments
 		{
 			get { return this; }
 		}
 
-		public DepartmentList Add(string departmentName, Employee entity)
+		public IDepartmentCollection<Employee> Add(string departmentName, Employee entity)
 		{
 			if (!ContainsKey(departmentName))
 			{
