@@ -8,7 +8,7 @@ namespace Generics.Extensions
 {
 	public static class BufferExtensions
 	{
-		public static void Dump<T>(this IBuffer<T> buffer, Printer print)
+		public static void Dump<T>(this IBuffer<T> buffer, Printer<T> print)
 		{
 			foreach (var item in buffer)
 			{

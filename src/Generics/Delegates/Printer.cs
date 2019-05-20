@@ -1,4 +1,4 @@
 ﻿namespace Generics.Delegates
 {
-	public delegate void Printer(object data);
+	public delegate void Printer<T>(T data);
 }
