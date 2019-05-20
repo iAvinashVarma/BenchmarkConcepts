@@ -20,10 +20,10 @@ namespace CommonCLI.GenericSolution
 
 		public virtual void OutputBuffer(IBuffer<double> buffer)
 		{
-			Action<double> print = delegate (double data)
+			void print(double data)
 			{
 				Console.WriteLine(data);
-			};
+			}
 			buffer.Dump(print);
 		}
 
