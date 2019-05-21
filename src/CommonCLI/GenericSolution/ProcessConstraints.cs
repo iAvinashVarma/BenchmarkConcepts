@@ -16,7 +16,14 @@ namespace CommonCLI.GenericSolution
 			{
 				AddEmployees(employeeRepository);
 				CountEmployees(employeeRepository);
+				QueryEmployees(employeeRepository);
 			}
+		}
+
+		private void QueryEmployees(IRepository<Employee> employeeRepository)
+		{
+			var employee = employeeRepository.FindById(1);
+			Console.WriteLine(employee.Name);
 		}
 
 		private void CountEmployees(IRepository<Employee> employeeRepository)

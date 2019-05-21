@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Generics.DataAccess
 {
-	public class SqlRepository<T> : IRepository<T> where T : class, IEntity
+	public class SqlRepository<T> : IRepository<T> where T : class, IEntity, new()
 	{
 		private readonly DbContext _dbContext;
 		private readonly DbSet<T> _dbSet;
@@ -31,7 +31,7 @@ namespace Generics.DataAccess
 
 		public void Delete(T entity)
 		{
-			throw new NotImplementedException();
+			_dbSet.Remove(entity);
 		}
 
 		public void Dispose()
@@ -46,7 +46,7 @@ namespace Generics.DataAccess
 
 		public T FindById(int id)
 		{
-			throw new NotImplementedException();
+			return _dbSet.Find(id);
 		}
 	}
 }
