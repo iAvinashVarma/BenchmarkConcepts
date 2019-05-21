@@ -17,7 +17,13 @@ namespace CommonCLI.GenericSolution
 				AddEmployees(employeeRepository);
 				CountEmployees(employeeRepository);
 				QueryEmployees(employeeRepository);
+				DumpPeople(employeeRepository);
 			}
+		}
+
+		private void DumpPeople(IReadOnlyRepository<Person> employeeRepository)
+		{
+			throw new NotImplementedException();
 		}
 
 		private void QueryEmployees(IRepository<Employee> employeeRepository)
