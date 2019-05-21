@@ -15,15 +15,26 @@ namespace CommonCLI.GenericSolution
 			using (IRepository<Employee> employeeRepository = new SqlRepository<Employee>(new EmployeeDb()))
 			{
 				AddEmployees(employeeRepository);
+				AddManagers(employeeRepository);
 				CountEmployees(employeeRepository);
 				QueryEmployees(employeeRepository);
 				DumpPeople(employeeRepository);
 			}
 		}
 
+		private void AddManagers(IWriteOnlyRepository<Manager> employeeRepository)
+		{
+			employeeRepository.Add(new Manager { Name = "Bill" });
+			employeeRepository.Commit();
+		}
+
 		private void DumpPeople(IReadOnlyRepository<Person> employeeRepository)
 		{
-			throw new NotImplementedException();
+			var employees = employeeRepository.FindAll();
+			foreach (var employee in employees)
+			{
+				Console.WriteLine(employee.Name);
+			}
 		}
 
 		private void QueryEmployees(IRepository<Employee> employeeRepository)
