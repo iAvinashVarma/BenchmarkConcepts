@@ -13,6 +13,7 @@
 		Sort = 9,
 		Buffer = 10,
 		ComparingEmployees = 11,
-		Delegates = 12
+		Delegates = 12,
+		Constraints = 13
 	}
 }

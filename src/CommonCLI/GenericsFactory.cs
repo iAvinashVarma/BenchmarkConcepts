@@ -49,6 +49,9 @@ namespace CommonCLI
 				case ProcessType.Delegates:
 					genericProcess = new ProcessDelegates();
 					break;
+				case ProcessType.Constraints:
+					genericProcess = new ProcessConstraints();
+					break;
 				default:
 					break;
 			}
