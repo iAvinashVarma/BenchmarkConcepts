@@ -1,6 +1,5 @@
 ﻿using Generics.DataAccess.Interface;
-using System;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace Generics.DataAccess
@@ -8,19 +7,19 @@ namespace Generics.DataAccess
 	public class SqlRepository<T> : IRepository<T> where T : class, IEntity, new()
 	{
 		private readonly DbContext _dbContext;
-		private readonly DbSet<T> _dbSet;
 
 		public SqlRepository(DbContext dbContext)
 		{
 			_dbContext = dbContext;
-			_dbSet = _dbContext.Set<T>();
+			_dbContext.Database.EnsureDeleted();
+			_dbContext.Database.EnsureCreated();
 		}
 
 		public void Add(T entity)
 		{
 			if (entity.IsValid())
 			{
-				_dbSet.Add(entity);
+				_dbContext.Set<T>().Add(entity);
 			}
 		}
 
@@ -31,7 +30,7 @@ namespace Generics.DataAccess
 
 		public void Delete(T entity)
 		{
-			_dbSet.Remove(entity);
+			_dbContext.Set<T>().Remove(entity);
 		}
 
 		public void Dispose()
@@ -41,12 +40,12 @@ namespace Generics.DataAccess
 
 		public IQueryable<T> FindAll()
 		{
-			return _dbSet;
+			return _dbContext.Set<T>();
 		}
 
 		public T FindById(int id)
 		{
-			return _dbSet.Find(id);
+			return _dbContext.Set<T>().Find(id);
 		}
 	}
 }

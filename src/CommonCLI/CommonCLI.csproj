@@ -6,13 +6,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EntityFramework" Version="6.2.0" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.6.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.4" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Generics\Generics.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
