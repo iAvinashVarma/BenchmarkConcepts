@@ -2,8 +2,9 @@
 using Generics.DataAccess;
 using Generics.DataAccess.Interface;
 using Generics.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
-using System.Data.Entity;
+using System.Linq;
 
 namespace CommonCLI.GenericSolution
 {
@@ -11,7 +12,6 @@ namespace CommonCLI.GenericSolution
 	{
 		public void Run()
 		{
-			Database.SetInitializer(new DropCreateDatabaseAlways<EmployeeDb>());
 			using (IRepository<Employee> employeeRepository = new SqlRepository<Employee>(new EmployeeDb()))
 			{
 				AddEmployees(employeeRepository);
@@ -30,8 +30,8 @@ namespace CommonCLI.GenericSolution
 
 		private void DumpPeople(IReadOnlyRepository<Person> employeeRepository)
 		{
-			var employees = employeeRepository.FindAll();
-			foreach (var employee in employees)
+			IQueryable<Person> employees = employeeRepository.FindAll();
+			foreach (Person employee in employees)
 			{
 				Console.WriteLine(employee.Name);
 			}
@@ -39,7 +39,7 @@ namespace CommonCLI.GenericSolution
 
 		private void QueryEmployees(IRepository<Employee> employeeRepository)
 		{
-			var employee = employeeRepository.FindById(1);
+			Employee employee = employeeRepository.FindById(1);
 			Console.WriteLine(employee.Name);
 		}
 

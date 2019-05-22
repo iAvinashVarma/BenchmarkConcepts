@@ -1,11 +1,13 @@
 ﻿using Generics.DataAccess.Interface;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Generics.Model
 {
 	public class Employee : Person, IEntity
 	{
-		public int DepartmentId { get; set; }
+		[Key]
+		public override int Id { get; set; }
 
 		public virtual void DoWork(Action<string> action)
 		{
