@@ -52,14 +52,17 @@ namespace CommonCLI
 				case ProcessType.Constraints:
 					genericProcess = new ProcessConstraints();
 					break;
-				case ProcessType.IocContainer:
+				case ProcessType.GenericMethods:
 					genericProcess = new ProcessGenericMethods();
 					break;
-				case ProcessType.IOCContainer:
+				case ProcessType.IocContainer:
 					genericProcess = new ProcessIocContainer();
 					break;
 				case ProcessType.GenericEnum:
 					genericProcess = new ProcessGenericEnum();
+					break;
+				case ProcessType.BaseTypes:
+					genericProcess = new ProcessBaseTypes();
 					break;
 				default:
 					break;

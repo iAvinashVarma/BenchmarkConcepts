@@ -28,7 +28,7 @@ namespace CommonCLI
 
 		private static void DebugPreProcessor()
 		{
-			ProcessType processType = ProcessType.GenericEnum;
+			ProcessType processType = ProcessType.BaseTypes;
 			RunGenericProcess(processType);
 		}
 
