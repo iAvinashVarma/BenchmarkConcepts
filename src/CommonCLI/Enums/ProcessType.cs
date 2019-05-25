@@ -15,6 +15,7 @@
 		ComparingEmployees = 11,
 		Delegates = 12,
 		Constraints = 13,
-		GenericMethods = 14
+		IocContainer = 14,
+		IOCContainer = 15
 	}
 }

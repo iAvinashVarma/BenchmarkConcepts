@@ -28,7 +28,7 @@ namespace CommonCLI
 
 		private static void DebugPreProcessor()
 		{
-			ProcessType processType = ProcessType.GenericMethods;
+			ProcessType processType = ProcessType.IocContainer;
 			RunGenericProcess(processType);
 		}
 
