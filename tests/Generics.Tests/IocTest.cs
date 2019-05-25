@@ -14,7 +14,7 @@ namespace Generics.Tests
 			Container ioc = new Container();
 			ioc.For<ILogger>().Use<SqlServerLogger>();
 
-			object logger = ioc.Resolve<ILogger>();
+			ILogger logger = ioc.Resolve<ILogger>();
 			Assert.AreEqual(typeof(SqlServerLogger), logger.GetType());
 		}
 
@@ -25,8 +25,19 @@ namespace Generics.Tests
 			ioc.For<ILogger>().Use<SqlServerLogger>();
 			ioc.For<IRepository<Employee>>().Use<SqlRepository<Employee>>();
 
-			object repository = ioc.Resolve<IRepository<Employee>>();
+			IRepository<Employee> repository = ioc.Resolve<IRepository<Employee>>();
 			Assert.AreEqual(typeof(SqlRepository<Employee>), repository.GetType());
+		}
+
+		[Test]
+		public void Can_Resolve_Concrete_Type()
+		{
+			Container ioc = new Container();
+			ioc.For<ILogger>().Use<SqlServerLogger>();
+			ioc.For(typeof(IRepository<>)).Use(typeof(SqlRepository<>));
+
+			InvoiceService service = ioc.Resolve<InvoiceService>();
+			Assert.IsNotNull(service);
 		}
 	}
 }

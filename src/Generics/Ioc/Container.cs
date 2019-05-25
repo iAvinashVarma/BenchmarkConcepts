@@ -29,15 +29,27 @@ namespace Generics.Ioc
 
 		public object Resolve(Type sourceType)
 		{
+			object instance = null;
 			if(_map.ContainsKey(sourceType))
 			{
 				var destinationType = _map[sourceType];
-				return CreateInstance(destinationType);
+				instance = CreateInstance(destinationType);
+			}
+			else if (sourceType.IsGenericType && _map.ContainsKey(sourceType.GetGenericTypeDefinition()))
+			{
+				var destinationType = _map[sourceType.GetGenericTypeDefinition()];
+				var closedDestination = destinationType.MakeGenericType(sourceType.GenericTypeArguments);
+				instance = CreateInstance(closedDestination);
+			}
+			else if(!sourceType.IsAbstract)
+			{
+				instance = CreateInstance(sourceType);
 			}
 			else
 			{
 				throw new InvalidOperationException($"Could not resolve {sourceType}.");
 			}
+			return instance;
 		}
 
 		private object CreateInstance(Type destinationType)
