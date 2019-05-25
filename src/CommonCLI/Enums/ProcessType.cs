@@ -16,6 +16,7 @@
 		Delegates = 12,
 		Constraints = 13,
 		IocContainer = 14,
-		IOCContainer = 15
+		IOCContainer = 15,
+		GenericEnum = 16
 	}
 }

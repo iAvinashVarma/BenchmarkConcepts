@@ -58,7 +58,9 @@ namespace CommonCLI
 				case ProcessType.IOCContainer:
 					genericProcess = new ProcessIocContainer();
 					break;
-
+				case ProcessType.GenericEnum:
+					genericProcess = new ProcessGenericEnum();
+					break;
 				default:
 					break;
 			}
