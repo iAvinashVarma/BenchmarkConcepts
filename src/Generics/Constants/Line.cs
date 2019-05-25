@@ -8,8 +8,8 @@
 
 		static Line()
 		{
-			Star = new string('*', 10);
-			Hyphen = new string('-', 10);
+			Star = new string('*', 25);
+			Hyphen = new string('-', 25);
 		}
 	}
 }

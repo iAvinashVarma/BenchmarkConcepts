@@ -9,19 +9,21 @@ namespace CommonCLI.GenericSolution
 	{
 		public void Run()
 		{
-			var list = new List<Item>();
-			list.Add(new Item<int>());
-			list.Add(new Item<double>());
+			var list = new List<Item>
+			{
+				new Item<int>(),
+				new Item<double>()
+			};
 		}
-	}
 
-	public class Item<T> : Item
-	{
+		public class Item<T> : Item
+		{
 
-	}
+		}
 
-	public class Item
-	{
+		public class Item
+		{
 
+		}
 	}
 }

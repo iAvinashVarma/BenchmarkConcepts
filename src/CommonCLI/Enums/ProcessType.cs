@@ -18,6 +18,7 @@
 		GenericMethods = 14,
 		IocContainer = 15,
 		GenericEnum = 16,
-		BaseTypes = 17
+		BaseTypes = 17,
+		GenericStatics = 18
 	}
 }

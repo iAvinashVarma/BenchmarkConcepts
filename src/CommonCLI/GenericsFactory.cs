@@ -64,6 +64,9 @@ namespace CommonCLI
 				case ProcessType.BaseTypes:
 					genericProcess = new ProcessBaseTypes();
 					break;
+				case ProcessType.GenericStatics:
+					genericProcess = new ProcessGenericStatics();
+					break;
 				default:
 					break;
 			}
