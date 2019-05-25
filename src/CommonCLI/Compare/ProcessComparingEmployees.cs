@@ -7,7 +7,7 @@ namespace CommonCLI.Compare
 {
 	public class ProcessComparingEmployees : IGenericProcess
 	{
-		private const string Divider = "**********";
+		private readonly string Divider = new string('-', 5);
 
 		public void Run()
 		{
@@ -35,7 +35,7 @@ namespace CommonCLI.Compare
 
 		private void ProcessSortedDictionarySortedSet()
 		{
-			var departments = new DepartmentSortedSet();
+			DepartmentSortedSet departments = new DepartmentSortedSet();
 			AddEmployeeData(departments);
 			IterateDictionary(departments);
 		}
@@ -58,10 +58,10 @@ namespace CommonCLI.Compare
 
 		private void IterateDictionary(IDepartmentEnumerable<string, Employee> departments)
 		{
-			foreach (var department in departments)
+			foreach (KeyValuePair<string, IEnumerable<Employee>> department in departments)
 			{
 				Console.WriteLine($"{department.Key}");
-				foreach (var employee in department.Value)
+				foreach (Employee employee in department.Value)
 				{
 					Console.WriteLine($"\t{employee.Name}");
 				}

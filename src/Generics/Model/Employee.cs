@@ -14,6 +14,11 @@ namespace Generics.Model
 			action.Invoke("Doing real work.");
 		}
 
+		public virtual void Speak<T>()
+		{
+			Console.WriteLine(typeof(T).Name);
+		}
+
 		public bool IsValid()
 		{
 			return true;

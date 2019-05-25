@@ -14,6 +14,7 @@
 		Buffer = 10,
 		ComparingEmployees = 11,
 		Delegates = 12,
-		Constraints = 13
+		Constraints = 13,
+		GenericMethods = 14
 	}
 }

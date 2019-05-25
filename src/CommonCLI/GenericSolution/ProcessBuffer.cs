@@ -2,6 +2,7 @@
 using Generics.Concrete;
 using Generics.Extensions;
 using Generics.Interface;
+using Generics.Miscellaneous;
 using System;
 
 namespace CommonCLI.GenericSolution
@@ -34,9 +35,24 @@ namespace CommonCLI.GenericSolution
 
 		public virtual void DoInput(IBuffer<double> buffer)
 		{
+			int occurance = 0;
 			while (true)
 			{
-				string input = Console.ReadLine();
+				occurance++;
+				if(occurance > buffer.Capacity)
+				{
+					break;
+				}
+				bool success = Reader.TryReadLine(out string input, 5000);
+				if (!success)
+				{
+					input = new Random().NextDouble(1.1, 9.5).ToString();
+					Console.WriteLine($"Auto Input : {input}.");
+				}
+				else
+				{
+					Console.WriteLine($"Given Input : {input}.");
+				}
 				if (double.TryParse(input, out double value))
 				{
 					buffer.Write(value);

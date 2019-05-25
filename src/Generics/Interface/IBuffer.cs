@@ -6,6 +6,8 @@ namespace Generics.Interface
 {
 	public interface IBuffer<T> : IEnumerable<T>
 	{
+		int Capacity { get; }
+
 		bool IsEmpty { get; }
 
 		void Write(T value);

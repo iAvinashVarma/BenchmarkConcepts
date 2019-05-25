@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Generics.Model
 {
@@ -8,7 +6,10 @@ namespace Generics.Model
 	{
 		public override void DoWork(Action<string> action)
 		{
-			action.Invoke("Create a meeting");
+			if (action != null)
+			{
+				action.Invoke("Create a meeting");
+			}
 		}
 	}
 }

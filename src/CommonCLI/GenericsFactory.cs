@@ -52,6 +52,10 @@ namespace CommonCLI
 				case ProcessType.Constraints:
 					genericProcess = new ProcessConstraints();
 					break;
+				case ProcessType.GenericMethods:
+					genericProcess = new ProcessGenericMethods();
+					break;
+
 				default:
 					break;
 			}

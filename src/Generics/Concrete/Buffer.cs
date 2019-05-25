@@ -11,6 +11,8 @@ namespace Generics.Concrete
 
 		public virtual bool IsEmpty => _queue.Count == 0;
 
+		public virtual int Capacity => 5;
+
 		public IEnumerator<T> GetEnumerator()
 		{
 			foreach (T item in _queue)

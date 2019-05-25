@@ -5,6 +5,8 @@ namespace Generics.Concrete
 {
 	public class CircularBuffer<T> : Buffer<T>
 	{
+		public override int Capacity => _capacity;
+
 		private int _capacity;
 
 		public CircularBuffer(): this(capacity: 10)
